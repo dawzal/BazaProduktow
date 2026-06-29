@@ -1,0 +1,36 @@
+﻿@model BazaProduktow.Models.Produkt
+
+@{
+    ViewData["Title"] = "Dodaj produkt";
+}
+
+<div class="container mt-4">
+    <h2>Dodaj produkt</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Dodaj" method="post">
+                <div class="mb-3">
+                    <label asp-for="Nazwa" class="form-label"></label>
+                    <input asp-for="Nazwa" class="form-control" />
+                    <span asp-validation-for="Nazwa" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Opis" class="form-label"></label>
+                    <textarea asp-for="Opis" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Kategoria" class="form-label"></label>
+                    <input asp-for="Kategoria" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cena" class="form-label"></label>
+                    <input asp-for="Cena" class="form-control" />
+                    <span asp-validation-for="Cena" class="text-danger"></span>
+                </div>
+                <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+                <button type="submit" class="btn btn-success">Zapisz</button>
+            </form>
+        </div>
+    </div>
+</div>

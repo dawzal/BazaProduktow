@@ -1,0 +1,23 @@
+﻿@model BazaProduktow.Models.Produkt
+
+@{
+    ViewData["Title"] = "Usuń produkt";
+}
+
+<div class="container mt-4">
+    <h2>Czy na pewno chcesz usunąć ten produkt?</h2>
+    <hr />
+    <div class="card col-md-6">
+        <div class="card-body">
+            <p><strong>Nazwa:</strong> @Model.Nazwa</p>
+            <p><strong>Kategoria:</strong> @Model.Kategoria</p>
+            <p><strong>Cena:</strong> @Model.Cena.ToString("C")</p>
+            <p><strong>Opis:</strong> @Model.Opis</p>
+            <form asp-action="Usun" method="post">
+                <input type="hidden" asp-for="Id" />
+                <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+                <button type="submit" class="btn btn-danger">Usuń</button>
+            </form>
+        </div>
+    </div>
+</div>
